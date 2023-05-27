@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><%=message%></h1>
+
+    <a href="/admin/products" class="btn btn-primary">back to all product</a>
+    <br>
+    <form action="/admin/products/add-product" method="post">
+      <label for="">title</label>
+      <input type="text" name="title" />
+      <label for="">desc</label>
+      <input type="text" name="desc" />
+      <label for="">slug</label>
+      <input type="text" name="slug" />
+     
+      <label for="">category</label>
+     <select name="category" id="category" >
+            <%cat.forEach(function(c){%>
+            <option value=<%=c.title%> ><%=c.title%></option>
+            <%});%>
+     </select>
+     
+      <label for="">price</label>
+      <input type="text" name="price" />
+     <label for="">Image</label>
+     <input type="file" name="image" id="image">
+      <label for="" name="sorting">sorting</label>
+      <input type="number" name="sorting" />
+
+      <button type="submit">Valider</button>
+    </form>
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

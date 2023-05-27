@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAtegories</title>
+</head>
+<body>
+    <a href="/admin/categories/add-categories">Add new category</a>
+
+
+    <table>
+<thead>
+    <tr>
+        <th>Category</th>
+        <th>Edit</th>
+        <th>Delete</th>
+
+    </tr>
+    <tbody>
+        <%categories.forEach(function(cat){%>
+
+            <tr>
+                    <td><%=cat.title%></td>
+                    <td> <a href="/admin/categories/edit-categories/<%=cat._id%>">Edit</a>  </td>
+                    <td> <a href="/admin/categories/delete-categories/<%=cat._id%>">Delete</a>  </td>
+            </tr>
+
+
+
+       <% }  );%>
+
+
+
+    </tbody>
+</thead>
+
+
+
+
+
+
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>welcome to our shop</h1>
+    <a href="/">Home</a>
+    <a href="">about</a>
+    <a href="">Contact</a>
+    <a href="/admin/pages">admin</a>
+    <a href="/cart/checkout">My Cart</a>
+    <a href="/user/logout">Logout</a>
+    <% if(typeof cart!=="undefined"){ %>
+        <%=cart.length%>
+    <% }else{%>
+        0
+        <%}%>
+    <h3>Categories</h3>
+    <ul class="list-group">
+        <li><a href="/products">All products</a></li>
+        <% cats.forEach(function(c){  %>
+           <li><a href="/<%=c.title%>"><%=c.title%></a></li>
+
+        <%});%>
+
+    </ul>
+
+</body>
+</html>

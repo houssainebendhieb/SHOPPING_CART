@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello world si admin</h1>
+    <h1><%=message%></h1>
+
+
+    <a href="/admin/pages">back to all page</a>
+
+
+    <form action="/admin/pages/add-pages" method="post">
+
+        <label for="" >title</label>
+        <input type="text" name="title" >
+        <label for="" >username</label>
+        <input type="text" name="content" >
+        <label for="" name="sorting">sorting</label>
+        <input type="number" name="sorting" >
+        
+        <button type="submit">Valider</button>
+
+    </form>
+
+
+    
+  <!-- Include Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

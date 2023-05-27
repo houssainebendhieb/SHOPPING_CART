@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Pages</title>
+</head>
+<body>
+     <a href="/admin/products/add-product" class="btn btn-primary">Add a new produit</a>
+     <% if(count>0){%>
+     
+     
+     <table class="table table-striped">
+        <thead>
+
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Product Image</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tbody>
+                <% products.forEach((p)=> {%>
+                <tr>
+                    <td> <%=p.title%>  </td>
+                    <td> <%=parseFloat(p.price).toFixed(2)%>  </td>
+                    <td> <%=p.category%>  </td>
+                    <td>
+                        <%if(false){  %>
+                            <img src="/image/noimage.png" >
+                        <%}else{ %>
+                            <img src="/public/images/image_games.jpg">
+                        <% } %>
+                    </td>
+
+                    <td> <a href="/admin/products/edit-product/<%=p._id%>">Edit</a>  </td>
+                    <td> <a href="/admin/products/delete-product/<%=p._id%>">Delete</a>  </td>
+                    
+                </tr>
+                <%  });%>
+            </tbody>
+        </thead>
+
+
+     </table>
+     
+     <%}else {%>
+        <h3 class="text-center">There are no products</h3>
+        <%}%>
+
+     
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
